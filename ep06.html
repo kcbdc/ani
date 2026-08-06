@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조팸스 원정대 EP.6 - 이익보다 중요한 게 있다고?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="stage">
+  <div class="masthead">
+    <div class="kicker">JOPAMS EXPEDITION · MINI WEBCOMIC</div>
+    <h1>조팸스 원정대 <span>EP.6</span></h1>
+  </div>
+
+  <div class="comic-frame" id="frame">
+    <div class="panel active" data-panel="0">
+      <div class="panel-inner">
+        <div class="halftone-burst"></div>
+        <div class="caption-tag">EPISODE 6</div>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+          <div class="cover-title">
+            <span class="ep">사회적기업 편</span>
+            "이익보다 중요한<br>게 있다고?"
+          </div>
+          <div class="trio-cover">
+            <img src="assets/img/sunsik.png" alt="조순식" class="bounce">
+            <img src="assets/img/daim.png" alt="조다임">
+            <img src="assets/img/hoonmin.png" alt="조훈민" class="proud">
+          </div>
+          <div class="next-label">▶ 시작하려면 다음을 눌러주세요</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel" data-panel="1">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">순식, 계산기 두드리는 중</div>
+        <div class="prop-emoji">🧮</div>
+        <img src="assets/img/sunsik.png" alt="조순식 (자석 스킬)" class="char-img focus" style="left:10%;">
+        <div class="bubble left" id="ep6b1" style="left:4%; top:12%;">그래서 이거<br>얼마 남는데?</div>
+        </div></div>
+    <div class="panel" data-panel="2">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">대표님의 답변</div>
+        <img src="assets/img/sunsik.png" alt="조순식 (자석 스킬)" class="char-img support" style="left:10%;">
+        <div class="npc" style="left:52%;">
+          <div class="head" style="background:#7fd6c9;">🙂</div>
+          <div class="body" style="background:#7fd6c9;"></div>
+        </div>
+        <div class="bubble right" id="ep6b2" style="right:4%; top:10%;">이익의 일부는<br>사회에 환원해요</div>
+        </div></div>
+    <div class="panel" data-panel="3">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">멍해진 순식, 다임이 정리</div>
+        <img src="assets/img/sunsik.png" alt="조순식 (자석 스킬)" class="char-img focus sad-shake" style="left:10%;">
+        <img src="assets/img/daim.png" alt="조다임 (실드 스킬)" class="char-img focus" style="left:52%;">
+        <div class="bubble left" id="ep6b3a" style="left:4%; top:10%;">그게...<br>무슨 소리야?</div>
+        <div class="bubble right" id="ep6b3b" style="right:4%; top:50%;">이익만 좇지 않는<br>기업도 있다는 거지</div>
+        </div></div>
+    <div class="panel" data-panel="4">
+      <div class="panel-inner">
+        <div class="halftone-burst"></div>
+        <div class="caption-tag">ITEM GET!</div>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;">
+          <div style="position:relative;">
+            <span class="sparkle" style="top:-14px; left:-18px;">✨</span>
+            <span class="sparkle" style="bottom:-10px; right:-20px; animation-delay:.4s;">✨</span>
+            <div class="item-card">
+              <div class="icon">🤝</div>
+              <div class="tag">ITEM 06 / 12</div>
+              <div class="name">사회적기업<br>제품</div>
+            </div>
+          </div>
+          
+          <div class="next-label">다음 편에 계속 →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress" id="progress"></div>
+
+  <div class="controls">
+    <button class="ghost" id="prevBtn">◀ 이전</button>
+    <button id="playBtn">▶ 자동재생</button>
+    <button id="nextBtn">다음 ▶</button>
+  </div>
+
+  <div class="nav-row">
+    <a href="ep05.html">◀ EP.5</a>
+    <span class="spacer">EP 6 / 12</span>
+    <a href="ep07.html">EP.7 ▶</a>
+  </div>
+
+  <div class="foot-note">조팸스 원정대 · 공공구매 12대 우선구매 제도 학습 웹코믹</div>
+</div>
+
+<script>
+  window.BUBBLE_SCHEDULE = { 1: [['ep6b1', 300]], 2: [['ep6b2', 300]], 3: [['ep6b3a', 300], ['ep6b3b', 1200]] };
+</script>
+<script src="assets/script.js"></script>
+
+</body>
+</html>

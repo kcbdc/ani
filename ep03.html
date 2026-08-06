@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조팸스 원정대 EP.3 - 사장님이 누구실까요 게임</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="stage">
+  <div class="masthead">
+    <div class="kicker">JOPAMS EXPEDITION · MINI WEBCOMIC</div>
+    <h1>조팸스 원정대 <span>EP.3</span></h1>
+  </div>
+
+  <div class="comic-frame" id="frame">
+    <div class="panel active" data-panel="0">
+      <div class="panel-inner">
+        <div class="halftone-burst"></div>
+        <div class="caption-tag">EPISODE 3</div>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+          <div class="cover-title">
+            <span class="ep">여성기업 편</span>
+            "사장님이 누구실까요<br>게임"
+          </div>
+          <div class="trio-cover">
+            <img src="assets/img/sunsik.png" alt="조순식" class="bounce">
+            <img src="assets/img/daim.png" alt="조다임">
+            <img src="assets/img/hoonmin.png" alt="조훈민" class="proud">
+          </div>
+          <div class="next-label">▶ 시작하려면 다음을 눌러주세요</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel" data-panel="1">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">회사 입구에서 내기</div>
+        <img src="assets/img/sunsik.png" alt="조순식 (자석 스킬)" class="char-img focus" style="left:10%;">
+        <img src="assets/img/hoonmin.png" alt="조훈민 (혜안 스킬)" class="char-img support" style="left:52%;">
+        <div class="bubble left" id="ep3b1" style="left:4%; top:12%;">이 회사 사장님은<br>분명 아저씨일걸?</div>
+        </div></div>
+    <div class="panel" data-panel="2">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">사장님, 등장</div>
+        <img src="assets/img/daim.png" alt="조다임 (실드 스킬)" class="char-img support" style="left:10%;">
+        <div class="npc" style="left:52%;">
+          <div class="head" style="background:#c79bf0;">👩</div>
+          <div class="body" style="background:#c79bf0;"></div>
+        </div>
+        <div class="bubble right" id="ep3b2" style="right:4%; top:10%;">안녕하세요,<br>대표입니다!</div>
+        </div></div>
+    <div class="panel" data-panel="3">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">내기에 진 세 사람</div>
+        <img src="assets/img/hoonmin.png" alt="조훈민 (혜안 스킬)" class="char-img focus sad-shake" style="left:10%;">
+        <img src="assets/img/daim.png" alt="조다임 (실드 스킬)" class="char-img focus" style="left:52%;">
+        <div class="bubble left" id="ep3b3a" style="left:4%; top:10%;">이럴수가...<br>내 혜안이 틀렸다!</div>
+        <div class="bubble right" id="ep3b3b" style="right:4%; top:50%;">벌칙... 춤춰야<br>하는 거죠?</div>
+        </div></div>
+    <div class="panel" data-panel="4">
+      <div class="panel-inner">
+        <div class="halftone-burst"></div>
+        <div class="caption-tag">ITEM GET!</div>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;">
+          <div style="position:relative;">
+            <span class="sparkle" style="top:-14px; left:-18px;">✨</span>
+            <span class="sparkle" style="bottom:-10px; right:-20px; animation-delay:.4s;">✨</span>
+            <div class="item-card">
+              <div class="icon">👩‍💼</div>
+              <div class="tag">ITEM 03 / 12</div>
+              <div class="name">여성기업<br>제품</div>
+            </div>
+          </div>
+          
+          <div class="next-label">다음 편에 계속 →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress" id="progress"></div>
+
+  <div class="controls">
+    <button class="ghost" id="prevBtn">◀ 이전</button>
+    <button id="playBtn">▶ 자동재생</button>
+    <button id="nextBtn">다음 ▶</button>
+  </div>
+
+  <div class="nav-row">
+    <a href="ep02.html">◀ EP.2</a>
+    <span class="spacer">EP 3 / 12</span>
+    <a href="ep04.html">EP.4 ▶</a>
+  </div>
+
+  <div class="foot-note">조팸스 원정대 · 공공구매 12대 우선구매 제도 학습 웹코믹</div>
+</div>
+
+<script>
+  window.BUBBLE_SCHEDULE = { 1: [['ep3b1', 300]], 2: [['ep3b2', 300]], 3: [['ep3b3a', 300], ['ep3b3b', 1200]] };
+</script>
+<script src="assets/script.js"></script>
+
+</body>
+</html>

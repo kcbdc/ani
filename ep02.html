@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조팸스 원정대 EP.2 - 이 반짝이는 스티커의 정체</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="stage">
+  <div class="masthead">
+    <div class="kicker">JOPAMS EXPEDITION · MINI WEBCOMIC</div>
+    <h1>조팸스 원정대 <span>EP.2</span></h1>
+  </div>
+
+  <div class="comic-frame" id="frame">
+    <div class="panel active" data-panel="0">
+      <div class="panel-inner">
+        <div class="halftone-burst"></div>
+        <div class="caption-tag">EPISODE 2</div>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+          <div class="cover-title">
+            <span class="ep">기술개발제품 편</span>
+            "이 반짝이는<br>스티커의 정체"
+          </div>
+          <div class="trio-cover">
+            <img src="assets/img/sunsik.png" alt="조순식" class="bounce">
+            <img src="assets/img/daim.png" alt="조다임">
+            <img src="assets/img/hoonmin.png" alt="조훈민" class="proud">
+          </div>
+          <div class="next-label">▶ 시작하려면 다음을 눌러주세요</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel" data-panel="1">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">매장 진열대 앞</div>
+        <div class="prop-emoji">🏷️</div>
+        <img src="assets/img/hoonmin.png" alt="조훈민 (혜안 스킬)" class="char-img focus proud" style="left:10%;">
+        <div class="bubble left" id="ep2b1" style="left:4%; top:14%;">이거 그냥<br>스티커 아니냐?</div>
+        </div></div>
+    <div class="panel" data-panel="2">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">다임, 조심스럽게 설명</div>
+        <img src="assets/img/daim.png" alt="조다임 (실드 스킬)" class="char-img focus" style="left:52%;">
+        <div class="bubble right" id="ep2b2" style="right:4%; top:12%;">이거 성능 인증<br>마크래... 엄청난 거야</div>
+        </div></div>
+    <div class="panel" data-panel="3">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">순식, 스티커를 향해 돌진</div>
+        <div class="prop-emoji">🧲</div>
+        <img src="assets/img/sunsik.png" alt="조순식 (자석 스킬)" class="char-img focus shake" style="left:10%;">
+        <img src="assets/img/hoonmin.png" alt="조훈민 (혜안 스킬)" class="char-img support" style="left:52%;">
+        <div class="bubble left" id="ep2b3a" style="left:4%; top:10%;">오, 반짝이는 거<br>내꺼!</div>
+        <div class="bubble right" id="ep2b3b" style="right:4%; top:55%;">안돼! 그거 떼면<br>큰일나!</div>
+        </div></div>
+    <div class="panel" data-panel="4">
+      <div class="panel-inner">
+        <div class="halftone-burst"></div>
+        <div class="caption-tag">ITEM GET!</div>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;">
+          <div style="position:relative;">
+            <span class="sparkle" style="top:-14px; left:-18px;">✨</span>
+            <span class="sparkle" style="bottom:-10px; right:-20px; animation-delay:.4s;">✨</span>
+            <div class="item-card">
+              <div class="icon">🔬</div>
+              <div class="tag">ITEM 02 / 12</div>
+              <div class="name">기술개발<br>제품</div>
+            </div>
+          </div>
+          
+          <div class="next-label">다음 편에 계속 →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress" id="progress"></div>
+
+  <div class="controls">
+    <button class="ghost" id="prevBtn">◀ 이전</button>
+    <button id="playBtn">▶ 자동재생</button>
+    <button id="nextBtn">다음 ▶</button>
+  </div>
+
+  <div class="nav-row">
+    <a href="ep01.html">◀ EP.1</a>
+    <span class="spacer">EP 2 / 12</span>
+    <a href="ep03.html">EP.3 ▶</a>
+  </div>
+
+  <div class="foot-note">조팸스 원정대 · 공공구매 12대 우선구매 제도 학습 웹코믹</div>
+</div>
+
+<script>
+  window.BUBBLE_SCHEDULE = { 1: [['ep2b1', 300]], 2: [['ep2b2', 300]], 3: [['ep2b3a', 300], ['ep2b3b', 1200]] };
+</script>
+<script src="assets/script.js"></script>
+
+</body>
+</html>

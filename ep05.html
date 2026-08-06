@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>조팸스 원정대 EP.5 - 혜안으로도 못 본 정성</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="stage">
+  <div class="masthead">
+    <div class="kicker">JOPAMS EXPEDITION · MINI WEBCOMIC</div>
+    <h1>조팸스 원정대 <span>EP.5</span></h1>
+  </div>
+
+  <div class="comic-frame" id="frame">
+    <div class="panel active" data-panel="0">
+      <div class="panel-inner">
+        <div class="halftone-burst"></div>
+        <div class="caption-tag">EPISODE 5</div>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;">
+          <div class="cover-title">
+            <span class="ep">중증장애인생산품 편</span>
+            "혜안으로도<br>못 본 정성"
+          </div>
+          <div class="trio-cover">
+            <img src="assets/img/sunsik.png" alt="조순식" class="bounce">
+            <img src="assets/img/daim.png" alt="조다임">
+            <img src="assets/img/hoonmin.png" alt="조훈민" class="proud">
+          </div>
+          <div class="next-label">▶ 시작하려면 다음을 눌러주세요</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel" data-panel="1">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">훈민, 스킬 자랑</div>
+        <img src="assets/img/hoonmin.png" alt="조훈민 (혜안 스킬)" class="char-img focus proud" style="left:10%;">
+        <div class="bubble left" id="ep5b1" style="left:4%; top:12%;">내 혜안이면<br>다 보인다고!</div>
+        </div></div>
+    <div class="panel" data-panel="2">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">스킬 오작동</div>
+        <img src="assets/img/hoonmin.png" alt="조훈민 (혜안 스킬)" class="char-img focus" style="left:10%;">
+        <div class="sweat">💧</div>
+        <div class="bubble left" id="ep5b2" style="left:4%; top:12%;">어라... 이 제품에 담긴<br>정성은... 안 보여?</div>
+        </div></div>
+    <div class="panel" data-panel="3">
+        <div class="panel-inner">
+        <div class="stagefloor"></div>
+        <div class="caption-tag">현장을 둘러본 후</div>
+        <img src="assets/img/sunsik.png" alt="조순식 (자석 스킬)" class="char-img support" style="left:10%;">
+        <img src="assets/img/daim.png" alt="조다임 (실드 스킬)" class="char-img focus" style="left:52%;">
+        <div class="bubble right" id="ep5b3" style="right:4%; top:12%;">눈이 아니라<br>마음으로 보는 거였어</div>
+        </div></div>
+    <div class="panel" data-panel="4">
+      <div class="panel-inner">
+        <div class="halftone-burst"></div>
+        <div class="caption-tag">ITEM GET!</div>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;">
+          <div style="position:relative;">
+            <span class="sparkle" style="top:-14px; left:-18px;">✨</span>
+            <span class="sparkle" style="bottom:-10px; right:-20px; animation-delay:.4s;">✨</span>
+            <div class="item-card">
+              <div class="icon">✨</div>
+              <div class="tag">ITEM 05 / 12</div>
+              <div class="name">중증장애인<br>생산품</div>
+            </div>
+          </div>
+          
+          <div class="next-label">다음 편에 계속 →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progress" id="progress"></div>
+
+  <div class="controls">
+    <button class="ghost" id="prevBtn">◀ 이전</button>
+    <button id="playBtn">▶ 자동재생</button>
+    <button id="nextBtn">다음 ▶</button>
+  </div>
+
+  <div class="nav-row">
+    <a href="ep04.html">◀ EP.4</a>
+    <span class="spacer">EP 5 / 12</span>
+    <a href="ep06.html">EP.6 ▶</a>
+  </div>
+
+  <div class="foot-note">조팸스 원정대 · 공공구매 12대 우선구매 제도 학습 웹코믹</div>
+</div>
+
+<script>
+  window.BUBBLE_SCHEDULE = { 1: [['ep5b1', 300]], 2: [['ep5b2', 300]], 3: [['ep5b3', 300]] };
+</script>
+<script src="assets/script.js"></script>
+
+</body>
+</html>
