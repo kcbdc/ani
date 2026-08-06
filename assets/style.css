@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&family=Do+Hyeon&display=swap');
+
+:root{
+  --ink:#161616;
+  --paper:#f6f4ee;
+  --yellow:#ffc63c;
+  --red:#ff4b45;
+  --blue:#2e5cff;
+  --panel-bg:#ffffff;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(circle, rgba(22,22,22,0.06) 1px, transparent 1.2px);
+  background-size:14px 14px;
+  font-family:'Gowun Dodum', sans-serif;
+  color:var(--ink);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:24px 12px;
+  overflow-x:hidden;
+}
+
+.stage{ width:100%; max-width:640px; }
+
+.masthead{ text-align:center; margin-bottom:14px; }
+.masthead .kicker{
+  font-family:'Do Hyeon', sans-serif;
+  font-size:12px;
+  letter-spacing:4px;
+  color:var(--red);
+}
+.masthead h1{
+  font-family:'Black Han Sans', sans-serif;
+  font-size:clamp(24px,6vw,36px);
+  margin:4px 0 0;
+  letter-spacing:1px;
+}
+.masthead h1 span{ color:var(--blue); }
+
+.comic-frame{
+  position:relative;
+  background:var(--panel-bg);
+  border:5px solid var(--ink);
+  border-radius:10px;
+  box-shadow:10px 10px 0 var(--ink);
+  aspect-ratio:4/5;
+  overflow:hidden;
+}
+
+.panel{
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform:scale(1.06);
+  transition:opacity .45s ease, transform .45s ease;
+  pointer-events:none;
+}
+.panel.active{ opacity:1; transform:scale(1); pointer-events:auto; }
+.panel-inner{ position:relative; width:100%; height:100%; }
+
+.halftone-burst{
+  position:absolute; inset:0;
+  background:radial-gradient(circle at 50% 45%, rgba(255,198,60,0.55) 0%, rgba(255,198,60,0) 55%);
+  opacity:0;
+}
+.panel.active .halftone-burst{ animation:burstIn .6s ease forwards; }
+@keyframes burstIn{
+  0%{opacity:0; transform:scale(.6);}
+  50%{opacity:1; transform:scale(1.08);}
+  100%{opacity:.35; transform:scale(1);}
+}
+
+.caption-tag{
+  position:absolute; top:14px; left:14px;
+  background:var(--ink); color:var(--paper);
+  font-family:'Do Hyeon', sans-serif;
+  font-size:12px; padding:5px 10px; border-radius:3px;
+  z-index:5; max-width:78%; line-height:1.4;
+}
+
+.stagefloor{
+  position:absolute; left:0; right:0; bottom:0; height:20%;
+  background:linear-gradient(180deg, rgba(46,92,255,0.08), rgba(46,92,255,0.18));
+  border-top:3px solid var(--ink);
+}
+
+/* main trio characters (real artwork) */
+.char-img{
+  position:absolute;
+  bottom:18%;
+  width:104px;
+  filter:drop-shadow(4px 4px 0 var(--ink));
+  transition: left .6s ease, transform .5s ease, opacity .4s ease;
+  opacity:.35;
+  transform:scale(.94);
+}
+.char-img.focus{ opacity:1; transform:scale(1.06); }
+.char-img.support{ opacity:.85; transform:scale(1); }
+
+.bounce{ animation:bounce 1.6s infinite ease-in-out; }
+@keyframes bounce{ 0%,100%{transform:translateY(0) scale(1.06);} 50%{transform:translateY(-8px) scale(1.06);} }
+.shake{ animation:shake .5s infinite; }
+@keyframes shake{ 0%,100%{transform:rotate(-2deg) scale(1.06);} 50%{transform:rotate(2deg) scale(1.06);} }
+.proud{ animation:proud 1.8s infinite ease-in-out; }
+@keyframes proud{ 0%,100%{transform:translateY(0) rotate(0deg) scale(1.06);} 50%{transform:translateY(-4px) rotate(-3deg) scale(1.06);} }
+.sad-shake{ animation:sadshake .45s infinite; }
+@keyframes sadshake{ 0%,100%{transform:translateX(-2px) scale(1.06);} 50%{transform:translateX(2px) scale(1.06);} }
+
+.sweat{ position:absolute; top:6%; right:14%; font-size:18px; animation:drip 1.2s infinite ease-in-out; z-index:4;}
+@keyframes drip{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(4px);} }
+
+/* speech bubbles */
+.bubble{
+  position:absolute; background:#fff; border:3px solid var(--ink); border-radius:14px;
+  padding:8px 12px; font-size:13px; line-height:1.35; max-width:180px;
+  opacity:0; transform:translateY(6px) scale(.9);
+  transition:opacity .35s ease, transform .35s ease; z-index:6;
+}
+.bubble.show{ opacity:1; transform:translateY(0) scale(1); }
+.bubble:after{
+  content:""; position:absolute; width:14px; height:14px; background:#fff;
+  border-right:3px solid var(--ink); border-bottom:3px solid var(--ink);
+  bottom:-9px; transform:rotate(45deg);
+}
+.bubble.left:after{ left:22px; }
+.bubble.right:after{ right:22px; }
+
+/* generic prop / npc */
+.prop-emoji{
+  position:absolute; left:50%; top:34%; transform:translate(-50%,-50%);
+  font-size:44px; z-index:3;
+}
+.npc{
+  position:absolute; bottom:18%; width:70px; text-align:center;
+}
+.npc .head{
+  width:50px; height:50px; border-radius:50%; border:4px solid var(--ink);
+  margin:0 auto 4px; display:flex; align-items:center; justify-content:center; font-size:18px;
+}
+.npc .body{
+  width:60px; height:34px; border:4px solid var(--ink); border-radius:8px 8px 3px 3px; margin:-2px auto 0;
+}
+
+.magnet-fx{
+  position:absolute; left:50%; top:34%; width:120px; height:120px; transform:translate(-50%,-50%);
+  border:3px dashed var(--blue); border-radius:50%; opacity:0;
+}
+.panel.active .magnet-fx{ animation:pull 1.1s ease-in-out infinite; }
+@keyframes pull{
+  0%{opacity:.7; transform:translate(-50%,-50%) scale(1.4);}
+  70%{opacity:.15; transform:translate(-50%,-50%) scale(.7);}
+  100%{opacity:0; transform:translate(-50%,-50%) scale(.6);}
+}
+
+/* item card */
+.item-card{
+  width:150px; height:200px;
+  background:linear-gradient(160deg,#fff,#fff2cf);
+  border:5px solid var(--ink); border-radius:14px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  box-shadow:0 0 0 6px rgba(255,198,60,0.4);
+  transform:rotateY(90deg) scale(.7); opacity:0;
+}
+.panel.active .item-card{ animation:cardIn .8s cubic-bezier(.2,1.4,.4,1) forwards; }
+@keyframes cardIn{
+  0%{transform:rotateY(90deg) scale(.7); opacity:0;}
+  60%{transform:rotateY(-14deg) scale(1.05); opacity:1;}
+  100%{transform:rotateY(0deg) scale(1); opacity:1;}
+}
+.item-card .icon{ font-size:40px; }
+.item-card .tag{ font-family:'Do Hyeon', sans-serif; font-size:11px; color:var(--red); letter-spacing:2px; }
+.item-card .name{ font-family:'Black Han Sans', sans-serif; font-size:16px; text-align:center; }
+.sparkle{ position:absolute; font-size:18px; animation:sparkle 1.4s infinite ease-in-out; }
+@keyframes sparkle{
+  0%,100%{opacity:.2; transform:scale(.7) rotate(0deg);}
+  50%{opacity:1; transform:scale(1.2) rotate(20deg);}
+}
+
+.cover-title{
+  font-family:'Black Han Sans', sans-serif;
+  font-size:clamp(20px,5.2vw,28px);
+  text-align:center; line-height:1.35;
+}
+.cover-title .ep{
+  display:block; font-size:13px; color:var(--blue);
+  font-family:'Do Hyeon', sans-serif; letter-spacing:3px; margin-bottom:6px;
+}
+.trio-cover{ display:flex; gap:10px; justify-content:center; margin-top:14px; }
+.trio-cover img{ width:82px; filter:drop-shadow(3px 3px 0 var(--ink)); }
+
+.next-label{
+  font-family:'Do Hyeon', sans-serif; font-size:12px; color:var(--ink); opacity:.55;
+  text-align:center; margin-top:10px;
+}
+
+.controls{ display:flex; align-items:center; justify-content:center; gap:14px; margin-top:18px; }
+.controls button{
+  font-family:'Do Hyeon', sans-serif; font-size:14px; background:var(--ink); color:var(--paper);
+  border:none; padding:10px 18px; border-radius:30px; cursor:pointer;
+  transition:transform .15s ease, background .15s ease;
+}
+.controls button:hover{ transform:translateY(-2px); background:#000; }
+.controls button:active{ transform:translateY(0); }
+.controls button.ghost{ background:transparent; color:var(--ink); border:2px solid var(--ink); }
+.controls button:disabled{ opacity:.3; cursor:default; transform:none; }
+
+.progress{ display:flex; gap:6px; justify-content:center; margin-top:14px; }
+.progress span{
+  width:9px; height:9px; border-radius:50%; background:#d8d4c8; border:2px solid var(--ink);
+  transition:background .2s ease;
+}
+.progress span.on{ background:var(--red); }
+
+.nav-row{
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:16px; font-family:'Do Hyeon', sans-serif; font-size:13px;
+}
+.nav-row a{
+  color:var(--ink); text-decoration:none; border-bottom:2px solid var(--ink);
+  padding-bottom:1px;
+}
+.nav-row a:hover{ color:var(--blue); border-color:var(--blue); }
+.nav-row .spacer{ opacity:.3; }
+
+.foot-note{
+  text-align:center; font-size:11px; opacity:.5; margin-top:18px;
+  font-family:'Do Hyeon', sans-serif; letter-spacing:1px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001s !important; transition-duration:.001s !important; }
+}
